@@ -1,0 +1,113 @@
+:root,
+[data-theme='dark'] {
+  --bg: #09090b;
+  --bg-soft: #121214;
+  --surface: #161618;
+  --text: #f4f1ea;
+  --muted: #9a958c;
+  --line: rgba(244, 241, 234, 0.1);
+  --accent: #c8f54a;
+  --accent-ink: #14160a;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  --logo-gold: #c4a35a;
+  --cell-0: #1c1c1f;
+  --cell-1: #31440f;
+  --cell-2: #5b8618;
+  --cell-3: #8fbf2a;
+  --cell-4: #c8f54a;
+  --solar: linear-gradient(145deg, #3b2a12, #c47a1a 55%, #f2c14e);
+  --book: linear-gradient(145deg, #102433, #1f7f8a 55%, #7ee0d6);
+  --ai: linear-gradient(145deg, #2a1640, #7a3dff 55%, #f2a0ff);
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --bg: #f4f1ea;
+  --bg-soft: #ebe6dc;
+  --surface: #fffdf8;
+  --text: #161513;
+  --muted: #6b665e;
+  --line: rgba(22, 21, 19, 0.1);
+  --accent: #5c8a08;
+  --accent-ink: #f7ffe8;
+  --shadow: 0 18px 40px rgba(40, 32, 16, 0.08);
+  --logo-gold: #c4a35a;
+  --cell-0: #e7e2d8;
+  --cell-1: #d4e89a;
+  --cell-2: #a8cc4a;
+  --cell-3: #6fa01c;
+  --cell-4: #3f6d08;
+  --solar: linear-gradient(145deg, #f3d7a4, #f0a020 55%, #fff4d6);
+  --book: linear-gradient(145deg, #cdeef0, #2aa3b0 55%, #e8fffb);
+  --ai: linear-gradient(145deg, #ead7ff, #7b4dff 55%, #ffe8fb);
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 18px;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Hanken Grotesk', 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+#root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  text-align: left;
+  border: 0;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Hanken Grotesk', 'Segoe UI', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
+  margin: 0;
+  color: var(--text);
+}
+
+p {
+  margin: 0;
+}
+
+code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.85em;
+  background: var(--bg-soft);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
