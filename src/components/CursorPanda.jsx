@@ -1,72 +1,26 @@
 import { useEffect } from 'react'
 
 const SPRITE = 32
-const SPEED = 10
+const SPEED = 4.2
 
-const SPRITES = {
-  idle: [[-3, -3]],
-  alert: [[-7, -3]],
-  scratchSelf: [
-    [-5, 0],
-    [-6, 0],
-    [-7, 0],
-  ],
-  scratchWallN: [
-    [0, 0],
-    [0, -1],
-  ],
-  scratchWallS: [
-    [-7, -1],
-    [-6, -2],
-  ],
-  scratchWallE: [
-    [-2, -2],
-    [-2, -3],
-  ],
-  scratchWallW: [
-    [-4, 0],
-    [-4, -1],
-  ],
-  tired: [[-3, -2]],
-  sleeping: [
-    [-2, 0],
-    [-2, -1],
-  ],
-  N: [
-    [-1, -2],
-    [-1, -3],
-  ],
-  NE: [
-    [0, -2],
-    [0, -3],
-  ],
-  E: [
-    [-3, 0],
-    [-3, -1],
-  ],
-  SE: [
-    [-5, -1],
-    [-5, -2],
-  ],
-  S: [
-    [-6, -3],
-    [-7, -2],
-  ],
-  SW: [
-    [-5, -3],
-    [-6, -1],
-  ],
-  W: [
-    [-4, -2],
-    [-4, -3],
-  ],
-  NW: [
-    [-1, 0],
-    [-1, -1],
-  ],
-}
+const CAT_SVG = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(`
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <path d="M9 10 L12 2 L15 10 Z" fill="#f7d9a6" stroke="#3a2d2d" stroke-width="1"/>
+  <path d="M23 10 L20 2 L17 10 Z" fill="#f7d9a6" stroke="#3a2d2d" stroke-width="1"/>
+  <ellipse cx="16" cy="18" rx="11" ry="9" fill="#f7d9a6" stroke="#3a2d2d" stroke-width="1"/>
+  <ellipse cx="11" cy="17" rx="1.5" ry="2.2" fill="#3a2d2d"/>
+  <ellipse cx="21" cy="17" rx="1.5" ry="2.2" fill="#3a2d2d"/>
+  <path d="M15 18 L16 20 L17 18" fill="none" stroke="#3a2d2d" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 20 Q14 24 13 21" fill="none" stroke="#3a2d2d" stroke-width="1" stroke-linecap="round"/>
+  <path d="M24 20 Q18 24 19 21" fill="none" stroke="#3a2d2d" stroke-width="1" stroke-linecap="round"/>
+  <path d="M7 15 Q4 16 4 18" fill="none" stroke="#3a2d2d" stroke-width="1" stroke-linecap="round"/>
+  <path d="M25 15 Q28 16 28 18" fill="none" stroke="#3a2d2d" stroke-width="1" stroke-linecap="round"/>
+  <path d="M7 22 Q12 27 15 24" fill="none" stroke="#3a2d2d" stroke-width="1" stroke-linecap="round"/>
+  <path d="M25 22 Q20 27 17 24" fill="none" stroke="#3a2d2d" stroke-width="1" stroke-linecap="round"/>
+</svg>
+`)}`
 
-export default function CursorPanda() {
+export default function CursorCat() {
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduced) return undefined
@@ -81,12 +35,24 @@ export default function CursorPanda() {
       height: `${SPRITE}px`,
       position: 'fixed',
       pointerEvents: 'none',
-      imageRendering: 'pixelated',
-      backgroundImage: 'url(/oneko/panda.png?v=4)',
       left: '16px',
       top: '16px',
       zIndex: 2147483647,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      overflow: 'visible',
     })
+
+    const cat = document.createElement('img')
+    cat.src = CAT_SVG
+    cat.alt = ''
+    cat.width = SPRITE
+    cat.height = SPRITE
+    cat.style.display = 'block'
+    cat.style.userSelect = 'none'
+    cat.style.pointerEvents = 'none'
+    neko.appendChild(cat)
     document.body.appendChild(neko)
 
     let nekoX = 32
@@ -101,8 +67,8 @@ export default function CursorPanda() {
     let raf = 0
 
     const setSprite = (name, frame) => {
-      const sprite = SPRITES[name][frame % SPRITES[name].length]
-      neko.style.backgroundPosition = `${sprite[0] * SPRITE}px ${sprite[1] * SPRITE}px`
+      const pose = frame % 2 === 0 ? 1 : -1
+      cat.style.transform = `scaleX(${pose})`
     }
 
     const resetIdle = () => {
@@ -142,14 +108,16 @@ export default function CursorPanda() {
       idleAnimationFrame += 1
     }
 
-    const frame = () => {
+    const frame = (timestamp) => {
+      const delta = Math.min(Math.max((timestamp - last) / 16.67 || 1, 0.5), 2)
       frameCount += 1
       const diffX = nekoX - mouseX
       const diffY = nekoY - mouseY
       const distance = Math.hypot(diffX, diffY)
 
-      if (distance < SPEED || distance < 48) {
+      if (distance < SPEED * delta || distance < 42) {
         idle()
+        last = timestamp
         return
       }
 
@@ -159,6 +127,7 @@ export default function CursorPanda() {
       if (idleTime > 1) {
         setSprite('alert', 0)
         idleTime = Math.min(idleTime, 7) - 1
+        last = timestamp
         return
       }
 
@@ -168,12 +137,14 @@ export default function CursorPanda() {
       direction += diffX / distance < -0.5 ? 'E' : ''
       setSprite(direction || 'idle', frameCount)
 
-      nekoX -= (diffX / distance) * SPEED
-      nekoY -= (diffY / distance) * SPEED
+      const step = SPEED * delta
+      nekoX -= (diffX / distance) * step
+      nekoY -= (diffY / distance) * step
       nekoX = Math.min(Math.max(16, nekoX), window.innerWidth - 16)
       nekoY = Math.min(Math.max(16, nekoY), window.innerHeight - 16)
       neko.style.left = `${nekoX - 16}px`
       neko.style.top = `${nekoY - 16}px`
+      last = timestamp
     }
 
     const onMove = (event) => {
@@ -181,13 +152,9 @@ export default function CursorPanda() {
       mouseY = event.clientY
     }
 
-    const loop = (stamp) => {
+    const loop = (timestamp) => {
       if (!neko.isConnected) return
-      if (!last) last = stamp
-      if (stamp - last > 100) {
-        last = stamp
-        frame()
-      }
+      frame(timestamp)
       raf = requestAnimationFrame(loop)
     }
 

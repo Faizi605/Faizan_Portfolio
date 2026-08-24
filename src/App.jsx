@@ -7,7 +7,7 @@ import Projects from './components/Projects'
 import Contributions from './components/Contributions'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import CursorPanda from './components/CursorPanda'
+import OnekoCat from './components/OnekoCat'
 import './App.css'
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
           <Contact />
         </main>
         <Footer />
-        <CursorPanda />
+        <OnekoCat />
       </div>
     </ThemeProvider>
   )
