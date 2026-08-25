@@ -99,24 +99,24 @@ export const projects = [
   },
   {
     year: '2026',
-    title: 'OneClick Book',
+    title: 'OneClick Books',
     blurb:
       'A full-featured booking web application with real-time data handling and booking management through REST APIs.',
     tags: ['Next.js', 'Tailwind CSS', 'REST APIs'],
     tone: 'book',
-    image: '',
+    image: '/assets/project/oneclick-books.svg',
     live: '',
     github: '',
   },
   {
     year: '2025',
-    title: 'AI Recipe Generator',
+    title: 'Recipe App',
     blurb:
-      'Final year project: a recipe website powered by React and Firebase, with Gemini AI features, API handling, and authentication.',
-    tags: ['React', 'Firebase', 'Gemini AI'],
+      'A React recipe discovery app with a visual food-first experience, recipe browsing, and dedicated pages for exploring meals.',
+    tags: ['React', 'JavaScript', 'Recipe UI'],
     tone: 'ai',
-    image: '',
+    image: '/assets/project/recipe-app-home.jpg',
     live: '',
-    github: '',
+    github: 'https://github.com/Faizi605/Recipe-app',
   },
 ]

@@ -12,7 +12,7 @@ export default function Projects() {
       <div className="mt-[28px] grid gap-[18px]">
         {projects.map((project, index) => (
           <Reveal key={project.title} delay={index * 90}>
-            <article className="grid overflow-hidden rounded-[22px] border border-[var(--line)] bg-[var(--surface)] shadow-[var(--card-shadow)] transition-transform duration-300 hover:-translate-y-1 md:grid-cols-[280px_1fr]">
+            <article className="grid overflow-hidden rounded-[22px] border border-[var(--line)] bg-[var(--surface)] shadow-[var(--card-shadow)] transition-transform duration-300 hover:-translate-y-1 md:h-[260px] md:grid-cols-[280px_1fr]">
               <div className={`relative min-h-[210px] overflow-hidden ${project.tone === 'solar' ? 'bg-[var(--solar)]' : project.tone === 'book' ? 'bg-[var(--book)]' : 'bg-[var(--ai)]'}`}>
                 {project.image ? (
                   <img className="h-full min-h-[210px] w-full object-cover object-top" src={project.image} alt={`${project.title} screenshot`} />

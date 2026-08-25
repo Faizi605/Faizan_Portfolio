@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">OneClick Books dashboard preview</title>
+  <desc id="desc">A booking dashboard with a dark green navigation sidebar, top toolbar, and chat workspace.</desc>
+  <rect width="1600" height="900" fill="#f5f6f7"/>
+  <rect width="220" height="900" fill="#064b45"/>
+  <g fill="#ffffff" font-family="Arial, sans-serif">
+    <text x="28" y="62" font-size="25" font-weight="700">✦ OneClick</text>
+    <text x="60" y="83" font-size="10" letter-spacing="3">BOOKS</text>
+    <text x="24" y="145" font-size="14">▦</text><text x="48" y="145" font-size="14">Dashboard</text>
+    <rect x="10" y="161" width="195" height="43" rx="14" fill="#a9e681" stroke="#ffffff" stroke-width="2"/>
+    <text x="25" y="188" font-size="14" fill="#123c35">▣</text><text x="48" y="188" font-size="14" fill="#123c35">AI ChatBot</text>
+    <text x="24" y="240" font-size="14">⌘</text><text x="48" y="240" font-size="14">Import &amp; Integrate</text>
+    <text x="24" y="287" font-size="14">▤</text><text x="48" y="287" font-size="14">Drafts &amp; Review</text>
+    <text x="24" y="334" font-size="14">□</text><text x="48" y="334" font-size="14">Mails</text>
+    <text x="24" y="381" font-size="14">◔</text><text x="48" y="381" font-size="14">Fraud Detection</text>
+  </g>
+  <rect x="220" width="1380" height="55" fill="#ffffff"/>
+  <g font-family="Arial, sans-serif" fill="#111111">
+    <text x="241" y="36" font-size="24" font-weight="700">AI ChatBot</text>
+    <rect x="373" y="14" width="300" height="30" rx="15" fill="#ffffff" stroke="#e1e5e8"/>
+    <circle cx="389" cy="29" r="6" fill="#c45ba8"/><text x="403" y="34" font-size="12">Odoo · Axiom_HQ_20_July</text>
+    <text x="1176" y="34" font-size="13">Axiom Group⌄</text><text x="1298" y="34" font-size="13">Axiom Digital⌄</text>
+    <circle cx="1442" cy="29" r="15" fill="#df6e29"/><text x="1467" y="27" font-size="13" font-weight="700">Nofel Elahi</text><text x="1467" y="42" font-size="10" fill="#727b81">nofel.elahi@axiomworld.net</text>
+  </g>
+  <rect x="1385" y="55" width="215" height="845" fill="#ffffff" stroke="#e1e5e8"/>
+  <g font-family="Arial, sans-serif" fill="#111111">
+    <text x="1407" y="92" font-size="16" font-weight="700">Recent Chats</text>
+    <rect x="1547" y="72" width="31" height="26" rx="7" fill="#a9e681"/><text x="1557" y="91" font-size="18">+</text>
+    <rect x="1397" y="119" width="194" height="26" rx="7" fill="#f8fafb" stroke="#e1e5e8"/><text x="1410" y="136" font-size="10" fill="#9aa5ae">⌕  Search messages...</text>
+    <text x="1397" y="177" font-size="12">hey what are you...</text><text x="1537" y="177" font-size="10" fill="#9aa5ae">2h ago</text>
+    <line x1="1385" y1="418" x2="1600" y2="418" stroke="#e1e5e8"/><text x="1407" y="449" font-size="16" font-weight="700">All Files from the Chat</text><text x="1580" y="449" font-size="18">⌄</text>
+    <text x="1410" y="491" font-size="10" fill="#9aa5ae">No files yet. Generated workbooks and</text><text x="1419" y="508" font-size="10" fill="#9aa5ae">uploads will appear here.</text>
+  </g>
+  <circle cx="258" cy="96" r="17" fill="#a9e681"/><text x="249" y="102" font-family="Arial" font-size="13" fill="#ffffff">AI</text>
+  <rect x="282" y="79" width="224" height="34" rx="17" fill="#ffffff" stroke="#dde4e8"/><text x="294" y="100" font-family="Arial" font-size="12" fill="#172027">Hello! I'm your personal AI Assistant.</text>
+  <rect x="532" y="603" width="543" height="120" rx="14" fill="#ffffff" stroke="#dde4e8"/>
+  <text x="551" y="633" font-family="Arial" font-size="12" fill="#8996a0">⌕  Message...</text>
+  <rect x="981" y="678" width="81" height="31" rx="17" fill="#d9f2c3"/><text x="995" y="698" font-family="Arial" font-size="12" fill="#8c999d">Send 〉</text>
+</svg>
