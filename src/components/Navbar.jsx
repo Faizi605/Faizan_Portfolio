@@ -48,6 +48,7 @@ export default function Navbar() {
         type="button"
         aria-label={open ? 'Close menu' : 'Open menu'}
         aria-expanded={open}
+        aria-controls="mobile-navigation"
         onClick={() => setOpen((value) => !value)}
       >
         <span className="mb-[5px] block h-[1.5px] w-4 bg-current" />
@@ -55,9 +56,9 @@ export default function Navbar() {
       </button>
 
       <nav
-        className={`absolute right-[7vw] left-[7vw] top-full hidden flex-col items-stretch gap-2 rounded-[18px] border border-[var(--line)] bg-[var(--surface)] p-4 md:static md:left-auto md:right-auto md:top-auto md:flex md:flex-row md:items-center md:rounded-full md:border md:bg-[color:color-mix(in_srgb,var(--surface)_80%,transparent)] md:p-2 ${
-          open ? 'flex' : ''
-        }`}
+        id="mobile-navigation"
+        className={`absolute right-[7vw] left-[7vw] top-full ${open ? 'flex' : 'hidden'} flex-col items-stretch gap-2 rounded-[18px] border border-[var(--line)] bg-[var(--surface)] p-4 md:static md:left-auto md:right-auto md:top-auto md:flex md:flex-row md:items-center md:rounded-full md:border md:bg-[color:color-mix(in_srgb,var(--surface)_80%,transparent)] md:p-2`}
+        style={{ display: open ? 'flex' : undefined }}
       >
         {links.map((link) => (
           <a

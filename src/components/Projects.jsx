@@ -13,9 +13,9 @@ export default function Projects() {
         {projects.map((project, index) => (
           <Reveal key={project.title} delay={index * 90}>
             <article className="grid overflow-hidden rounded-[22px] border border-[var(--line)] bg-[var(--surface)] shadow-[var(--card-shadow)] transition-transform duration-300 hover:-translate-y-1 md:h-[260px] md:grid-cols-[280px_1fr]">
-              <div className={`relative min-h-[210px] overflow-hidden ${project.tone === 'solar' ? 'bg-[var(--solar)]' : project.tone === 'book' ? 'bg-[var(--book)]' : 'bg-[var(--ai)]'}`}>
+              <div className={`relative h-[210px] min-h-0 overflow-hidden md:h-auto md:min-h-[210px] ${project.tone === 'solar' ? 'bg-[var(--solar)]' : project.tone === 'book' ? 'bg-[var(--book)]' : 'bg-[var(--ai)]'}`}>
                 {project.image ? (
-                  <img className="h-full min-h-[210px] w-full object-cover object-top" src={project.image} alt={`${project.title} screenshot`} />
+                  <img className="h-full min-h-0 w-full object-cover object-top" src={project.image} alt={`${project.title} screenshot`} />
                 ) : null}
                 <span className="absolute bottom-4 left-4 z-10 rounded-full bg-black/30 px-[10px] py-[6px] text-[0.82rem] text-white">{project.year}</span>
               </div>
