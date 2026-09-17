@@ -5,11 +5,11 @@ export const profile = {
   location: 'Lahore, Pakistan',
   email: 'faizirana2003@gmail.com',
   phone: '0304-9005536',
-  whatsapp: '923049005536',
+  whatsapp: 'Rana_Faizi',
   cvFile: '/Faizan_Resume.pdf',
   githubUsername: 'Faizi605',
   githubUrl: 'https://github.com/Faizi605',
-  linkedinUrl: 'https://www.linkedin.com/in/faizan-yousaf-703b15296',
+  linkedinUrl: 'https://www.linkedin.com/in/rana-faizan-01044b37b',
   roles: ['Web Developer', 'MERN Developer'],
   summary:
     'Motivated Software Engineer skilled in JavaScript, React.js, Node.js, Express.js, MongoDB, and RESTful APIs. I build responsive, scalable applications with a focus on clean code, problem-solving, API integration, and database management.',

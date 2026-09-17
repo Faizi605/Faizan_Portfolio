@@ -14,7 +14,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative mx-auto grid w-[min(1120px,calc(100%-10vw))] items-center gap-12 py-[72px] md:min-h-[calc(100vh-120px)] md:grid-cols-[1.1fr_0.9fr] md:gap-8 md:py-[84px]" id="top">
+    <section className="relative mx-auto grid w-[min(1120px,calc(100%-10vw))] items-center gap-8 py-[54px] md:min-h-[calc(100vh-70px)] md:grid-cols-[1.1fr_0.9fr] md:gap-6 md:py-[32px]" id="top">
       <div className="pointer-events-none absolute -top-10 right-[-8%] h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,var(--glow),transparent_68%)]" aria-hidden="true" />
       <div className="relative z-10">
         <p className="mb-[14px] text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-[var(--accent)] opacity-0 animate-[fade-up_0.85s_ease_forwards] [animation-delay:0.05s]">Hello, I&apos;m</p>
@@ -34,8 +34,8 @@ export default function Hero() {
             </span>
           </span>
         </p>
-        <p className="mt-[22px] max-w-[62ch] text-[1.08rem] leading-[1.7] text-[var(--muted)] opacity-0 animate-[fade-up_0.85s_ease_forwards] [animation-delay:0.32s]">{profile.summary}</p>
-        <div className="mt-[34px] flex flex-wrap gap-3 opacity-0 animate-[fade-up_0.85s_ease_forwards] [animation-delay:0.42s]">
+        <p className="mt-[18px] max-w-[62ch] text-[1.02rem] leading-[1.6] text-[var(--muted)] opacity-0 animate-[fade-up_0.85s_ease_forwards] [animation-delay:0.32s]">{profile.summary}</p>
+        <div className="mt-[28px] flex flex-wrap gap-3 opacity-0 animate-[fade-up_0.85s_ease_forwards] [animation-delay:0.42s]">
           <a
             className="inline-flex min-h-[48px] items-center justify-center rounded-full px-5 font-semibold text-[var(--accent-ink)] shadow-[0_12px_32px_var(--glow)] transition-transform duration-200 hover:-translate-y-0.5"
             style={{ background: 'var(--accent)', position: 'relative', overflow: 'hidden' }}
@@ -51,7 +51,7 @@ export default function Hero() {
             View work
           </a>
         </div>
-        <p className="mt-[22px] text-[0.95rem] text-[var(--muted)] opacity-0 animate-[fade-up_0.85s_ease_forwards] [animation-delay:0.52s]">{profile.location} · Available for work</p>
+        <p className="mt-[18px] text-[0.9rem] text-[var(--muted)] opacity-0 animate-[fade-up_0.85s_ease_forwards] [animation-delay:0.52s]">{profile.location} · Available for work</p>
       </div>
 
       <div className="relative mx-auto w-full max-w-[440px] opacity-0 animate-[fade-up_0.85s_ease_forwards] [animation-delay:0.2s]">
